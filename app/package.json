@@ -1,0 +1,33 @@
+{
+  "name": "Mixnode",
+  "productName": "Mixnode",
+  "description": "Mixnode is the Mixcloud's unofficial desktop app",
+  "author": {
+    "name": "Henoc Díaz"
+  },
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "./",
+  "private": false,
+  "main": "src/electron/index.js",
+  "dependencies": {
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start-react": "BROWSER=none $(npm bin)/react-scripts start",
+    "start-electron": "NODE_ENV=development DEV_URL=http://localhost:3000 $(npm bin)/electron .",
+    "start": "$(npm bin)/concurrently 'npm run start-react' '$(npm bin)/wait-on http://localhost:3000 && npm run start-electron'",
+    "build-react": "$(npm bin)/react-scripts build",
+    "build-electron": "$(npm bin)/electron-packager . --platform=darwin --packageManager=yarn --out=../packages --overwrite --icon=public/icons/mixnode",
+    "build": "NODE_ENV=producion $(npm bin)/concurrently '$(npm bin)/wait-on rm -rf ./build && npm run build-react' '$(npm bin)/wait-on build/index.html && npm run build-electron'",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "electron": "^1.7.9",
+    "electron-packager": "^9.1.0",
+    "wait-on": "^2.0.2"
+  }
+}
