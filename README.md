@@ -1,6 +1,6 @@
-# Mixnode API Sucks...
+# Mixcloud API Sucks...
 
-I won't be able to continue with the project due to Mixnode API limitations: [https://www.mixcloud.com/developers/#audio-streams](https://www.mixcloud.com/developers/#audio-streams)
+I won't be able to continue with the project due to Mixcloud API limitations: [https://www.mixcloud.com/developers/#audio-streams](https://www.mixcloud.com/developers/#audio-streams)
 
 # ~Mixnode 🎶~
 ~Desktop app for Mixcloud inspired by @soundnode~
